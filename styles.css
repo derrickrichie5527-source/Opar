@@ -81,3 +81,9 @@ section[id],#main-content{scroll-margin-top:90px}
 .skip-link{position:fixed;left:16px;top:-100px;z-index:50;background:var(--navy);color:white;padding:12px 18px;border-radius:8px}.skip-link:focus{top:10px}
 @media(max-width:560px){section[id],#main-content{scroll-margin-top:155px}.project-body{padding:20px}.project-actions a{min-height:44px}.results-grid div:last-child,.capability:last-child{border-bottom:0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Featured biomedical analysis, using the existing project-card design. */
+.nhanes-project{grid-column:1/-1;scroll-margin-top:90px}
+.nhanes-project .project-photo{background:var(--soft);object-fit:contain;padding:12px}
+@media(min-width:851px){.nhanes-project{display:grid;grid-template-columns:1.15fr 1fr}.nhanes-project .project-photo{height:100%;min-height:300px}}
+@media(max-width:560px){.nhanes-project{scroll-margin-top:155px}}
