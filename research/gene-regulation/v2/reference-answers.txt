@@ -1,0 +1,90 @@
+Reference answers — V2.0
+
+Q1. Reference instability masks the per-cell change
+
+ΔC_(q,control) = 25 − 20 = 5;   ΔC_(q,X) = 24 − 19 = 5
+ΔΔC_(q) = 0;   2^(−ΔΔC_(q)) = 1
+((M_(X))/(M_(control))) = 1 × 2 = 2
+
+The target/H ratio is unchanged, while both target and H abundance per cell double. H is therefore unsuitable as an unvalidated invariant reference. Independent per-cell calibration restores the scale discarded by ratio normalization. Equal viable-cell sampling, matched extraction and reverse transcription, assay specificity and the stated amplification efficiencies are required. Mature RNA abundance alone cannot distinguish increased production from reduced RNA loss.
+
+Q2. Recovery-corrected RNA production
+
+Control: ((100)/(0.80)) = 125 AU;   X: ((150)/(0.60)) = 250 AU;   ratio = ((250)/(125)) = 2
+
+Under equal pulse duration, equivalent incorporation, matched extraction, proportional purification losses, linear detection and negligible loss during the pulse, the corrected signal supports approximately twofold gene-specific RNA production over the pulse. Unchanged long-term mRNA decay is not required for this pulse inference. The post-extraction spike corrects downstream purification yield; it cannot establish cellular 4sU uptake/incorporation, viability, extraction recovery, or equal target processing and detection. Those conditions must be checked independently or explicitly assumed.
+
+This is not evidence that X binds a transcription factor or directly regulates a particular promoter or enhancer. Initiation, elongation, RNA processing, indirect signaling and treatment timing remain incompletely resolved. Comparable nascent-RNA detectability limits processing confounding in the idealized calculation; it does not establish unchanged splicing or RNA maturation in actual cells.
+
+Q3. Inhibitor-derived half-lives do not identify native turnover
+
+The 30% residual synthesis in treated cells violates a decay-only interpretation. Complete inhibition in control does not prove that cycloheximide leaves degradation or proliferation unchanged. Its apparent 2 h value therefore need not equal the independent 4 h total-loss half-life. Residual synthesis, inhibitor-induced changes in turnover or growth, and fitting a non-exponential trajectory could contribute to discrepancies; these data do not identify their individual effects. Global translation-inhibitor artifacts are documented in yeast, but their magnitude for R in human cells is unknown. [S4]
+
+With constant post-inhibitor synthesis and clearance:   ((P(t))/(P(0))) = a + (1 − a)e^(−k_(post)t),   a = ((S_(res))/(k_(post)P(0)))
+
+If the pretreatment state is steady and S_(res) = 0.30 S_(pre), then a = 0.30 k_(pre)/k_(post), not necessarily 0.30. Neither constant residual synthesis throughout the chase nor unchanged post-inhibitor clearance is established. A unique native rate or an exact “corrected” half-life cannot be recovered from the supplied apparent half-life and residual-synthesis percentage. Panel D avoids global inhibition and separates the labeled cohort from new synthesis, but still requires its own recycling, recovery, population and kinetic assumptions.
+
+Q4. Separating protein degradation from proliferation
+
+k_(loss) = −((ln[L(12)/L(0)])/(12 h));   t_(1/2,deg) = ((ln(2))/(k_(deg)))
+
+Calculated rates and half-lives (six decimals for rates)
+ | Quantity | Control | Compound X
+
+ | Total-loss half-life (h) | 4.00 | 6.00
+
+ | k_(loss) (h^(−1)) | 0.173287 | 0.115525
+
+ | k_(growth) (h^(−1)) | 0.057762 | 0.028881
+
+ | k_(deg) (h^(−1)) | 0.115525 | 0.086643
+
+ | Intrinsic degradation half-life (h) | 6.00 | 8.00
+
+For example, control k_(deg) = ln(2)/4 − ln(2)/12 = ln(2)/6. The treated value is ln(2)/6 − ln(2)/24 = ln(2)/8. Calculations use unrounded constants; display rounding need not subtract exactly. Fitting all rounded points gives essentially the same result within 1%. Per-cell labeled R disappears through degradation and partitioning among growing cell numbers. Calling the 4 h and 6 h values intrinsic degradation half-lives would overestimate degradation.
+
+Q5. Synthesis and effective synthesis per mRNA
+
+((S_(X))/(S_(control))) = ((P_(X)k_(loss,X))/(P_(control)k_(loss,control))) = 3 × ((ln(2)/6)/(ln(2)/4)) = 2
+((ε_(X))/(ε_(control))) = ((2)/(2)) = 1
+
+At steady state, the inferred synthesis rates are approximately 0.173287 and 0.346574 relative protein units per cell per hour. They are model-derived fluxes, not direct synthesis measurements. Twofold synthesis and a 1.50-fold clearance factor reproduce threefold protein abundance. ε is a net effective output per mature mRNA; equality does not establish unchanged initiation, elongation, isoform composition, localization, cotranslational loss or every regulatory pathway. Compensating changes could yield the same aggregate value. The estimate requires per-cell steady state, consistent normalization and total clearance represented by the measured labeled cohort; outside steady state S = dP/dt + k_(loss)P.
+
+Q6. Explicit control-baseline counterfactuals
+
+Hold S at its control value and change only the indicated constants. Each ratio below compares the hypothetical steady-state abundance with the original control, rather than with a previously modified state.
+
+Counterfactual abundance ratios at fixed control synthesis
+ | Changed term(s) | Calculation using h⁻¹ | Abundance ratio
+
+ | Degradation only | 0.173287 / (0.086643 + 0.057762) | ≈ 1.20
+
+ | Growth dilution only | 0.173287 / (0.115525 + 0.028881) | ≈ 1.20
+
+ | Both clearance terms | 0.173287 / (0.086643 + 0.028881) | ≈ 1.50
+
+((P_(X))/(P_(control))) = ((S_(X))/(S_(control))) × ((k_(loss,control))/(k_(loss,X))) = 2 × 1.50 = 3
+
+The treated total-loss constant is two-thirds of control; the inverse ratio, 1.50, is the abundance multiplier at fixed synthesis. Claim A is false: degradation alone predicts 1.20, not 3. Claim B conflicts with the corrected pulse result under its assumptions. Claim C is supported conditionally by the supplied steady-state model. Claim D is unsupported: neither a direct transcriptional target nor a proteasomal route was established.
+
+The two standalone 1.20 factors cannot be multiplied: both use the same control baseline and clearance terms add in the denominator. If one change is applied first, the second conditional factor is 1.25, giving 1.20 × 1.25 = 1.50. The intrinsic half-life ratio 8/6 ≈ 1.33 is not the degradation-only abundance ratio when growth dilution is present. A unique percentage attribution does not follow from this multiplicative reconciliation; any allocation requires an additional convention. These are model counterfactuals, not evidence that the biological mechanisms can be manipulated independently.
+
+Q7. Experiments that resolve remaining mechanisms
+
+Direct protein synthesis
+
+Use a short stable-isotope amino-acid pulse with R-specific quantitative mass spectrometry, normalized to viable-cell number and independently calibrated mature target mRNA. Include matched pulse durations, precursor-pool enrichment, R-specific recovery standards, linear response and multiple pulse lengths to check early linearity and loss during labeling. Collect biological replicates and contemporaneous growth/viability measurements. The model predicts approximately twofold synthesis per cell and unchanged effective synthesis per mRNA. A discrepancy would motivate testing steady state, precursor incorporation, cohort representativeness and rapid protein loss before attributing a change to translation efficiency.
+
+Endogenous cis-regulatory element perturbation
+
+Perturb a candidate promoter or distal enhancer at the endogenous locus using CRISPR interference or targeted sequence editing, comparing vehicle and X in a factorial design. Use multiple independent guides or edits, non-targeting and nearby negative controls, an appropriate positive control, and confirmation of editing or local repression. Measure short-pulse nascent target RNA, mature RNA, cell number and viability. Analyze whether perturbation changes the treatment response, not merely basal expression; avoid a floor effect from silencing the gene completely. Independent elements and an orthogonal perturbation help test specificity. [S7]
+
+Loss of the X response would support a requirement for the tested endogenous element in that context. It would not prove direct compound binding, identify a cognate transcription factor or exclude indirect signaling. An unchanged response could reflect an irrelevant element, incomplete perturbation, redundant enhancers or an alternative regulatory mechanism. Reporter activity alone would not establish endogenous necessity.
+
+Protein-degradation pathway
+
+Compare R pulse-chase kinetics under controlled proteasomal and lysosomal perturbations, with and without X. Verify pathway engagement with validated substrates, match growth and viability, and monitor R synthesis so abundance accumulation is not mistaken for blocked degradation. Orthogonal genetic perturbations strengthen inference. A pathway-dependent change in R clearance would support involvement, but drug interactions and stress responses would still prevent a direct-target claim without additional evidence.
+
+Q8. Example scientific conclusion
+
+Independent calibration indicates twofold mature target mRNA per cell despite an unchanged target/H ratio. Corrected nascent-RNA signal also doubles under comparable labeling and recovery assumptions, while protein abundance triples. Under the homogeneous first-order, steady-state model, the independent pulse-chase implies degradation half-lives of 6 and 8 h, approximately doubled protein synthesis and unchanged effective synthesis per mRNA. Increased synthesis and a 1.50-fold clearance contribution jointly account for the abundance difference; degradation alone does not. Residual synthesis and possible inhibitor perturbations prevent identification of native turnover from the cycloheximide chase. Direct transcriptional targets, RNA-processing mechanisms, translation steps and degradation pathways remain unresolved. These simulated point values have no biological replication or uncertainty estimates. A non-steady protein pool or a labeled cohort unrepresentative of bulk R would change the inferred synthesis rates.

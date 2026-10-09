@@ -1,0 +1,89 @@
+This is a self-contained scientific reasoning task. Answer all eight questions using only the supplied evidence and model. Show the calculations and units needed to justify your answers, distinguish observations from assumptions, and explain any limits on the conclusions. Do not browse the web or use external tools. Provide your complete answer in this conversation, organized by question number.
+
+# The case: an apparently simple result
+
+## Research scenario
+
+A team studies an intracellular, nonsecreted protein R in proliferating human epithelial cells. Compound X increases its abundance. The team concludes: "Compound X triples protein R solely by slowing its degradation; transcription and translation are unchanged."
+
+Protein R has no assumed molecular target, function or degradation route. Interpret only the evidence. The methods are realistic research methods, but the complete dataset is constructed for this exercise.
+
+## Panel A - Mature RNA and a reference transcript
+
+Equal numbers of viable cells are sampled. Input handling and RNA recovery are independently matched. For this idealized calculation only, both RT-qPCR assays have a per-cycle amplification factor of 2 and equivalent reverse-transcription performance. Specificity and negative controls pass.
+
+| Measurement | Control | Compound X |
+| --- | ---: | ---: |
+| Cq: mRNA encoding protein R | 25.0 | 24.0 |
+| Cq: reference transcript H | 20.0 | 19.0 |
+| H abundance per viable cell, independent calibration | 1.0 | 2.0 |
+
+H was selected without validating its stability under treatment. The initial report used 2^(-delta-delta-Cq), where delta-Cq is target Cq minus H Cq. A lower Cq means more starting template under the stated assumptions. [S1]
+
+## Panel B - Newly synthesized RNA and recovery
+
+Equal viable-cell inputs undergo the same short 4-thiouridine labeling pulse. Incorporation and viability checks are equivalent; decay during the pulse is assumed negligible. An equal amount of labeled RNA spike is added after RNA extraction but before labeled-RNA purification. Its recovery reflects purification yield, not cellular uptake or transcription. [S2]
+
+| Measurement | Control | Compound X |
+| --- | ---: | ---: |
+| Captured gene-specific newly made RNA signal | 100 | 100 |
+| Recovery of the added labeled spike | 80% | 40% |
+
+Assume the spike and target experience proportional purification loss. Neither row alone is a transcription-rate measurement.
+
+# Protein evidence and model boundaries
+
+## Panel C - Abundance and a flawed chase
+
+R-specific detection has validated specificity and a linear range. Total protein per viable cell and average cell size are equivalent between conditions, so the normalized abundance comparison is interpretable per cell. There are no observed secretion or export losses. [S3]
+
+| Measurement | Control | Compound X |
+| --- | ---: | ---: |
+| R protein abundance per viable cell | 1.0 | 3.0 |
+| Apparent half-life in a cycloheximide chase | 2 hours | 6 hours |
+| R-specific synthesis persisting during chase, relative to each condition before inhibition | 0% | 30% |
+
+The last row is a dedicated short-pulse synthesis control during the chase. It is not a pretreatment translation-efficiency measurement. Continued synthesis invalidates a simple decay-only interpretation in the treated condition. Global translation inhibition can also perturb degradation machinery. [S4]
+
+## Panel D - Independent turnover and cell growth
+
+An independent metabolic pulse-chase follows pre-existing labeled R without cycloheximide. Each result is labeled R per viable cell divided by that condition's own time-zero value. Label recycling, recovery and specificity controls pass. Both populations expand exponentially with stable mean cell size; viability is matched. [S5, S6]
+
+| Chase time | Control: labeled R per cell | Compound X: labeled R per cell |
+| --- | ---: | ---: |
+| 0 hours | 1.000000 | 1.000000 |
+| 4 hours | 0.500000 | 0.629961 |
+| 8 hours | 0.250000 | 0.396850 |
+| 12 hours | 0.125000 | 0.250000 |
+
+Population doubling times are 12 hours for control and 24 hours for treatment. RNA and protein abundance per cell are stable over the sampling window: a steady state per cell, not a nongrowing population. All values are idealized point values, with no replicates or uncertainty estimates. Statistical significance cannot be calculated.
+
+## Supplied model
+
+For this case, protein clearance per cell includes degradation and dilution from population growth. Assume homogeneous first-order degradation and no other loss route. [S5, S6]
+
+- k_loss = ln(2) / apparent half-life from Panel D.
+- k_growth = ln(2) / population doubling time.
+- k_degradation = k_loss - k_growth.
+- At steady state: P = S / k_loss.
+- S = e x M, where M is mature mRNA per cell and e is effective protein synthesis per mRNA.
+
+Use ln(2) = 0.693147. In the chase, labeled R per cell falls through both degradation and distribution among increasing cell numbers. The supplied model is a reasoning aid, not a claim that all real proteins follow these assumptions.
+
+# Questions for the solver
+
+1. **Audit the RNA conclusion.** Calculate the originally reported target/H fold change. Use the independent H calibration to infer the target mRNA change per cell. Explain why the two answers differ. State an assumption needed for this inference.
+
+2. **Correct newly made RNA.** Calculate the recovery-corrected treated/control signal ratio. What does it support about RNA production, and what does it fail to establish? Explain why the spike cannot validate cellular label incorporation.
+
+3. **Choose defensible turnover evidence.** Can the Panel C half-lives be used as native degradation half-lives? Explain the effect of residual synthesis, identify another inhibitor-related concern, and state why Panel D is the better starting point.
+
+4. **Separate degradation from dilution.** Use Panel D to calculate k_loss, k_growth and k_degradation in both conditions, in inverse hours. Calculate the degradation-only half-lives and distinguish them from the observed per-cell loss half-lives.
+
+5. **Reconcile protein and RNA.** Infer the treated/control synthesis-rate ratio at steady state. Then infer the effective synthesis-per-mRNA ratio. Quantify how synthesis and total clearance combine to explain threefold protein abundance. Does this prove that no individual translation-regulatory process changed?
+
+6. **Judge competing claims.** Assess these statements: A, degradation alone explains the increase; B, translation efficiency must have risen threefold; C, the stated model supports both increased synthesis and reduced total clearance; D, compound X directly inhibits a proteasome enzyme. Support or reject each using the supplied evidence.
+
+7. **Design discriminating follow-up work.** Propose one experiment to test the inferred synthesis-per-mRNA result and one to test whether a candidate endogenous cis-regulatory element is necessary for the RNA response to X. Give controls, observable outcomes and a remaining limitation for each. Explain why element dependence would not establish direct molecular action by X. Name one control needed before attributing slower degradation to a particular molecular pathway.
+
+8. **Write a defensible conclusion.** Replace the team's claim with three sentences: observations, model-dependent interpretation, and what remains unresolved. Explain why these simulated point values cannot support a statistical-significance claim.

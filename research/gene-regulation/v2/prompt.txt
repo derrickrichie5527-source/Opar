@@ -1,0 +1,121 @@
+Gene Regulation Under Conflicting Evidence — Assessment V2.0
+All measurements are simulated. Answer Q1–Q8 using only the supplied evidence. Show calculations, assumptions and limitations. No external tools or web access are required.
+
+Research scenario
+
+Compound X increases the steady-state abundance of an intracellular, nonsecreted protein R in proliferating human epithelial cells. Investigators propose that X acts solely by slowing degradation and leaves RNA production and protein synthesis unchanged. Evaluate this claim using the evidence below. No specific function, molecular target or degradation pathway is assigned to R or X.
+
+Panel A — Mature mRNA and reference normalization
+
+Equal numbers of viable cells are sampled. RNA extraction recovery and reverse-transcription performance are independently matched, and equal fractions of each per-cell extract are assayed. The mature-mRNA assay is specific for the processed target transcript. For these idealized calculations, both RT-qPCR assays have amplification factor 2 per cycle, comparable performance between conditions and satisfactory specificity and negative controls. These are assumptions of the exercise, not measurements supplied for independent validation. [S1]
+
+Panel A. RT-qPCR and independent reference calibration
+ | Measurement | Control | Compound X
+
+ | C_(q): mature mRNA encoding R | 25.0 | 24.0
+
+ | C_(q): transcript H | 20.0 | 19.0
+
+ | H abundance per viable cell, independent calibration | 1.0 | 2.0
+
+The original analysis selected H without testing its stability under treatment. It reported target/H fold change using 2^(−ΔΔC_(q)), with ΔC_(q) = C_(q,target) − C_(q,H) and ΔΔC_(q) = ΔC_(q,X) − ΔC_(q,control). The independent H calibration is relative abundance per cell, not a second target/reference ratio.
+
+Panel B — Newly synthesized RNA
+
+Equal viable-cell inputs receive an equal-duration, short 4-thiouridine (4sU) pulse. Cellular incorporation and viability are independently comparable. Extraction recovery per cell is independently matched; loss of the assayed newly synthesized RNA during the pulse is assumed negligible. Gene-specific detection captures newly synthesized target RNA without requiring completed maturation. Comparable processing and detectability are assumed. Signals are calibrated, background-corrected arbitrary units within a linear measurement range. [S2]
+
+An equal amount of labeled RNA spike is added after extraction, before purification of labeled RNA. Its recovery is measured relative to the known added amount. Assume the spike and target undergo proportional purification losses; the spike does not experience cell labeling or RNA extraction.
+
+Panel B. Captured RNA signal and purification recovery
+ | Measurement | Control | Compound X
+
+ | Captured newly synthesized target RNA (AU) | 100 | 150
+
+ | Recovery of post-extraction labeled spike | 80% | 60%
+
+Panel C — Protein abundance and cycloheximide chase
+
+R-specific detection has validated specificity and a linear response range. Protein abundance is normalized to viable-cell number; matched total protein per cell and mean cell size provide additional normalization checks. No secretion or export of R is detected. [S3]
+
+Panel C. Protein abundance and inhibitor-treated measurements
+ | Measurement | Control | Compound X
+
+ | R abundance per viable cell (relative units) | 1.0 | 3.0
+
+ | Reported apparent half-life during cycloheximide treatment | 2 h | 6 h
+
+ | R synthesis during chase (% of each condition’s pretreatment rate) | 0% | 30%
+
+Residual synthesis was measured by a separate R-specific short-pulse assay during inhibitor exposure. The reported apparent half-lives summarize the inhibitor experiment; its full trajectories, fitting procedure and growth rates during inhibitor exposure are not supplied. Interpret what is and is not identifiable from these observations.
+
+Panel D — Independent protein pulse-chase and proliferation
+
+A metabolic pulse-chase follows pre-existing labeled R without cycloheximide. Values are labeled R per viable cell divided by the corresponding time-zero value. The idealized model assumes a homogeneous labeled protein pool, constant first-order degradation, no label recycling, no export and matched recovery and detection. New unlabeled R does not contribute to the labeled signal. Both populations grow exponentially with stable mean cell size and matched viability. [S5] [S6]
+
+Panel D. Normalized labeled R per cell
+ | Time (h) | Control | Compound X
+
+ | 0 | 1.000 | 1.000
+
+ | 4 | 0.500 | 0.630
+
+ | 8 | 0.250 | 0.397
+
+ | 12 | 0.125 | 0.250
+
+Population doubling times are 12 h (control) and 24 h (X). Mature mRNA and total R abundance per cell are stable over the sampling window. The displayed chase values are rounded to three decimal places from idealized exponentials. There are no biological replicates or uncertainty estimates. Use endpoint-based rates or a consistent fit to the rounded data; do not infer statistical significance.
+
+Quantitative framework
+
+Let P be mean R abundance per cell, M mature target mRNA per cell, S protein synthesis per cell per hour, ε = S/M effective synthesis per mRNA, and T_(d) population doubling time. Rate constants have units h^(−1). Dilution describes a change in mean amount per cell as cell number grows; it is not molecular destruction.
+
+((dP)/(dt)) = S − (k_(deg) + k_(growth))P
+
+k_(loss) = k_(deg) + k_(growth);   k_(growth) = ((ln(2))/(T_(d)));   k_(loss) = ((ln(2))/(t_(1/2,loss)))
+
+k_(deg) = k_(loss) − k_(growth);   S = P × k_(loss)   (steady state);   S = εM
+
+For the labeled cohort, L(t)/L(0) = exp(−k_(loss)t), with no labeled synthesis during the chase. The half-life inferred from per-cell label loss is distinct from the intrinsic degradation half-life ln(2)/k_(deg). These equations define the supplied model; testing their biological validity would require further data.
+
+Assessment questions — Version 2
+
+Q1. RNA normalization
+
+Calculate the reported target/H fold change and the target mRNA fold change per cell. Explain their relationship and identify the assumptions needed for a per-cell inference.
+
+Q2. Nascent RNA inference
+
+Calculate recovery-corrected signals and their treatment/control ratio. State the strongest justified conclusion about RNA production and distinguish it from direct transcriptional regulation. Identify what the spike controls and what it leaves uncontrolled.
+
+Q3. Turnover evidence
+
+Assess whether Panel C identifies native protein degradation rates. Reconcile the differences between Panels C and D, distinguishing demonstrated observations from plausible explanations. Is an exact correction for residual synthesis possible from the supplied information?
+
+Q4. Degradation and growth dilution
+
+Use Panel D to estimate total-loss half-lives and rate constants, growth-dilution constants, intrinsic degradation constants and degradation half-lives in both conditions. Show units and distinguish the two meanings of half-life.
+
+Q5. Protein synthesis and mRNA
+
+Combine the abundance and kinetic measurements to infer the treatment/control ratios of S and ε. State the assumptions and explain which aspects of translational regulation remain unresolved.
+
+Q6. Mechanistic counterfactuals
+
+Starting from the control state, hold synthesis fixed and predict protein abundance if only degradation changes to the treated value, only growth dilution changes, or both change. Then incorporate the inferred synthesis change. Assess four claims: (A) degradation alone explains the threefold abundance increase; (B) RNA production is unchanged; (C) increased synthesis plus reduced total clearance explains the increase under this model; (D) X directly activates the R gene and specifically inhibits proteasomal degradation. Can these data assign unique percentage contributions to the mechanisms?
+
+Q7. Discriminating experiments
+
+Propose (i) a direct test of R synthesis per cell and per mature mRNA, and (ii) an endogenous cis-regulatory element perturbation testing the RNA response to X. Specify controls, predicted outcomes and limits of causal interpretation. Add a controlled experiment distinguishing candidate protein-degradation pathways.
+
+Q8. Scientific conclusion
+
+Write a concise conclusion (approximately 100–150 words) separating corrected measurements, model-dependent inferences and unresolved mechanisms. Address uncertainty and identify an assumption whose failure would change the synthesis estimate.
+
+Methodological references (not required to solve the task):
+S1: Bustin SA, Ruijter JM, van den Hoff MJB, Kubista M, Pfaffl MW, Shipley GL, Tran N, Rödiger S, Untergasser A, Mueller R, Nolan T, Milavec M, Burns MJ, Huggett JF, Vandesompele J, Wittwer CT. MIQE 2.0: Revision of the Minimum Information for Publication of Quantitative Real-Time PCR Experiments Guidelines. Clinical Chemistry. 2025;71(6):634–651. DOI: 10.1093/clinchem/hvaf043
+S2: Russo J, Heck AM, Wilusz J, Wilusz CJ. Metabolic labeling and recovery of nascent RNA to accurately quantify mRNA stability. Methods. 2017;120:39–48. DOI: 10.1016/j.ymeth.2017.02.003
+S3: Taylor SC, Posch A. The design of a quantitative Western blot experiment. BioMed Research International. 2014;2014:361590. DOI: 10.1155/2014/361590
+S4: Oh JH, Chen SJ, Varshavsky A. A reference-based protein degradation assay without global translation inhibitors. Journal of Biological Chemistry. 2017;292(52):21457–21465. DOI: 10.1074/jbc.M117.814236
+S5: Fierro-Monti I, Racle J, Hernandez C, Waridel P, Hatzimanikatis V, Quadroni M. A Novel Pulse-Chase SILAC Strategy Measures Changes in Protein Decay and Synthesis Rates Induced by Perturbation of Proteostasis with an Hsp90 Inhibitor. PLOS ONE. 2013;8(11):e80423. DOI: 10.1371/journal.pone.0080423
+S6: Dear AJ, Garcia GA, Meisl G, Collins GA, Knowles TPJ, Goldberg AL. Maximum entropy determination of mammalian proteome dynamics. Proceedings of the National Academy of Sciences USA. 2024;121(18):e2313107121. DOI: 10.1073/pnas.2313107121
+S7: Fulco CP, Munschauer M, Anyoha R, Munson G, Grossman SR, Perez EM, Kane M, Cleary B, Lander ES, Engreitz JM. Systematic mapping of functional enhancer-promoter connections with CRISPR interference. Science. 2016;354(6313):769–773. DOI: 10.1126/science.aag2445

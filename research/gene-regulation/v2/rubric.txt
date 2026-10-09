@@ -1,0 +1,26 @@
+Scoring rubric — V2.0
+
+Rubric V2.0: 40 points. This revision changes criterion weights and must not be used to regrade the historical V1 score without labeling a new retrospective analysis. Numerical tolerance is 1% for rounded-input estimates. Equivalent mathematically and biologically defensible approaches receive credit. No pass threshold or validated difficulty level is defined.
+
+Version 2 scoring criteria
+ | Question | Maximum | Criteria
+
+ | Q1 | 5 | Ratio normalization and ΔCq/ΔΔCq calculation (1); per-cell fold 2 (2); reference instability (1); valid normalization assumptions (1).
+
+ | Q2 | 4 | Corrected 125/250 and ratio 2 (1); bounded twofold production inference under pulse assumptions (1); limits of the post-extraction spike (1); direct regulation not established (1).
+
+ | Q3 | 5 | Residual synthesis precludes decay-only interpretation (1); inhibitor/growth effects and C–D discrepancy distinguished from proven mechanisms (1); no identifiable exact native correction, justified using missing quantities or the general solution (2); independent chase advantages and assumptions (1).
+
+ | Q4 | 7 | Total-loss half-lives 4/6 (1); total-loss rates (1); growth rates (1); degradation rates (2); degradation half-lives 6/8 and correct distinction (2).
+
+ | Q5 | 5 | Synthesis ratio 2 with derivation (2); ε ratio 1 (1); steady-state and cohort assumptions (1); unchanged ε does not resolve every translation process (1).
+
+ | Q6 | 6 | Control-baseline degradation-only 1.20 (1); growth-only 1.20 (1); combined 1.50 and reconciliation 2 × 1.50 = 3 (1); claims A/B rejected and C conditionally accepted (1); D unsupported (1); no unique percentage attribution or multiplication of standalone effects (1).
+
+ | Q7 | 5 | Direct synthesis experiment with cell/mRNA normalization and incorporation controls (1); predicted outcome and limits (1); endogenous cis-element factorial perturbation (1); controls, response-specific interpretation and alternatives (1); degradation-pathway test with engagement, growth and synthesis controls (1).
+
+ | Q8 | 3 | Corrected observations (1); conditional synthesis/clearance interpretation (1); unresolved mechanism, absent uncertainty and a consequential assumption (1).
+
+Award each listed unit only when both conclusion and supporting reasoning are correct; a multi-point unit may receive integer partial credit for independently correct components. Record the supporting response excerpt and justification for each award. Within the same criterion, an unresolved contradiction or unsupported numerical claim invalidates the affected reasoning credit even if a correct value appears elsewhere. Do not double-penalize the same error across unrelated criteria. Record additional unsupported claims in a separate error log; claims outside any criterion do not create ad hoc deductions. This exposes rubric coverage limits rather than concealing them. Word count is guidance, not a scoring criterion.
+
+For disputed criteria, preserve the initial score and record the alternative interpretation and adjudication. Future evaluators should agree on scoring rules before seeing model identities. No independent adjudication has been performed for this revision.
