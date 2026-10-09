@@ -1,0 +1,18 @@
+{
+  "hash_format": "SHA-256 of UTF-8 bytes with CRLF normalized to LF and exactly one terminal LF; GitHub editor adds a final newline to the original Claude response",
+  "archived_page_sha256": "2183be4d29b8417971d477318dd3358f0cebc8d7e780a2c4d20bd99fcc75671e",
+  "base_commit": "1b53250",
+  "v1_files": {
+    "claude-response.md": "3d72f7d6d3f9de0efde70c6e3dc5c9ec711f6817d5f41ff79158fe0ae875a0a1",
+    "prompt.txt": "da20eed50e0094a50d45a93d313cfad0b596a328cd2787a5baed65692112141b",
+    "rubric.md": "b055d41059fa76032cc462db038ef8a0ab1df8cd41552130129507e427e9468a",
+    "scores.csv": "4726251b99a6fdc7a802cd2e0dfa267844126c79b1eeebb1348082b572e8e438"
+  },
+  "v2_files": {
+    "data.json": "3abbf783895b0a14fba2dbbc93305536f30345b106501908365e3c96007a2dff",
+    "prompt.txt": "147e6ca756fbdfb5b38644fb5e34ab25d1099150da01b5176c20cc297a5ecfa1",
+    "reference-answers.txt": "0f0a38b3ae5d311beae9304681370c43e364ed929568071d97ab8be607a92031",
+    "rubric.txt": "9be9616f3ae4241ddf98610d480c10f21e19c0a18e4124fb459127e8af891990",
+    "run-template.json": "047c54a0cfcc0fa95b262abfa83881e81fafe6a86eae428a6a9368b61224a7fd"
+  }
+}
